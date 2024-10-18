@@ -8,7 +8,8 @@ enum layers {
   BASE,
   SYM,
   NAV,
-  STENO
+  STENO,
+  MOUSE
 };
 
 // Combos
@@ -20,17 +21,19 @@ combo_t key_combos[] = {
 // Tap Dance declarations
 enum {
     TD_ESC_EQL,
+    TD_SIX_MOUSE
 };
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for equal sign
     [TD_ESC_EQL] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_EQL),
+    [TD_SIX_MOUSE] = ACTION_TAP_DANCE_LAYER_MOVE(KC_6, MOUSE),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT(
-        TD(TD_ESC_EQL), KC_1, KC_2, KC_3,   KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+        TD(TD_ESC_EQL), KC_1, KC_2, KC_3,   KC_4,    KC_5,                         TD(TD_SIX_MOUSE), KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
         CW_TOGG, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
         SFT_T(KC_BSPC),KC_A, KC_R, KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, RSFT_T(KC_QUOT),
         KC_LGUI, ALT_T(KC_Z),KC_X, KC_C,    KC_D,    KC_V,                         KC_K,    KC_H,    KC_COMMA,KC_DOT,  RALT_T(KC_SLSH), KC_HYPR,
@@ -57,6 +60,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TO(BASE), _______, _______, _______, STN_NC, QK_STENO_BOLT,                QK_STENO_GEMINI, STN_NC, STN_FN, STN_RES1, STN_RES2, STN_PWR,
                                                      STN_A, STN_O,        STN_E, STN_U
     ),
+    [MOUSE] = LAYOUT(
+        _______, _______, _______, _______, _______, _______,                      _______,  _______, _______, _______, _______, _______,
+        _______, _______, _______, MS_WHLD, _______, _______,                      _______,  _______, MS_UP,   _______,  _______, _______,
+        _______, _______, MS_BTN1, MS_WHLU, MS_BTN2, _______,                      _______,  MS_LEFT, MS_DOWN, MS_RGHT, _______, _______,
+        TO(BASE), _______, _______, _______, _______, _______,                      _______,  _______, _______, _______, _______, _______,
+                                                     _______, _______,    _______, _______
+    ),
 };
 
 extern rgb_config_t rgb_matrix_config;
@@ -66,9 +76,10 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [SYM]   = { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_BLUE}, {HSV_BLUE}, {HSV_WHITE}, {HSV_OFF}, {HSV_YELLOW}, {HSV_YELLOW}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN} },
-    [NAV]   = { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_RED}, {HSV_OFF}, {HSV_OFF}, {HSV_SPRINGGREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF} },
-    [STENO] = { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_WHITE}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN} },
+    [SYM]   =   { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_BLUE}, {HSV_BLUE}, {HSV_WHITE}, {HSV_OFF}, {HSV_YELLOW}, {HSV_YELLOW}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN} },
+    [NAV]   =   { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_RED}, {HSV_OFF}, {HSV_OFF}, {HSV_SPRINGGREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF} },
+    [STENO] =   { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_WHITE}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN} },
+    [MOUSE]   = { {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_AZURE}, {HSV_GREEN}, {HSV_AZURE}, {HSV_OFF}, {HSV_WHITE}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF} },
 };
 
 void set_layer_color(int layer) {
@@ -102,6 +113,9 @@ bool rgb_matrix_indicators_user(void) {
       break;
     case 3:
       set_layer_color(3);
+      break;
+    case 4:
+      set_layer_color(4);
       break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
