@@ -1,4 +1,5 @@
 COMBO_ENABLE = yes
+LTO_ENABLE = yes
 RGB_MATRIX_ENABLE = yes
 STENO_ENABLE = yes
 STENO_PROTOCOL = geminipr
