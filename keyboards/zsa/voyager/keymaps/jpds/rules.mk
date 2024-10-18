@@ -1,2 +1,4 @@
 COMBO_ENABLE = yes
+STENO_ENABLE = yes
+STENO_PROTOCOL = geminipr
 TAP_DANCE_ENABLE ?= yes

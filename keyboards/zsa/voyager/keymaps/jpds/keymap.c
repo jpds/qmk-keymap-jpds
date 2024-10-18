@@ -7,7 +7,8 @@
 enum layers {
   BASE,
   SYM,
-  NAV
+  NAV,
+  STENO
 };
 
 // Combos
@@ -39,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                      KC_7,    KC_8,    KC_9,    KC_MINS, KC_SLSH, KC_F12,
         _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,                      KC_4,    KC_5,    KC_6,    KC_PLUS, KC_ASTR, KC_BSPC,
-        _______, _______, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR,                      KC_1,    KC_2,    KC_3,    KC_DOT,  KC_EQL,  KC_ENT,
+        TO(STENO), _______, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR,                    KC_1,    KC_2,    KC_3,    KC_DOT,  KC_EQL,  KC_ENT,
                                                      _______, _______,    _______, KC_0
     ),
     [NAV] = LAYOUT(
@@ -48,5 +49,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_MPRV, KC_MNXT, KC_MSTP, KC_MPLY, _______,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
         _______, _______, _______, _______, _______, _______,                      _______, C(S(KC_TAB)), C(KC_TAB), _______, _______, _______,
                                                      _______, _______,    _______, _______
+    ),
+    [STENO] = LAYOUT(
+        _______, STN_N1, STN_N2, STN_N3, STN_N4, STN_N5,                           STN_N6,  STN_N7, STN_N8, STN_N9, STN_NA, STN_NB,
+        _______, STN_S1, STN_TL, STN_PL, STN_HL, STN_ST1,                          STN_ST1, STN_FR, STN_PR, STN_LR, STN_TR, STN_DR,
+        _______, STN_S2, STN_KL, STN_WL, STN_RL, STN_ST2,                          STN_ST4, STN_RR, STN_BR, STN_GR, STN_SR, STN_ZR,
+        TO(BASE), _______, _______, _______, STN_NC, QK_STENO_BOLT,                QK_STENO_GEMINI, STN_NC, STN_FN, STN_RES1, STN_RES2, STN_PWR,
+                                                     STN_A, STN_O,        STN_E, STN_U
     ),
 };
