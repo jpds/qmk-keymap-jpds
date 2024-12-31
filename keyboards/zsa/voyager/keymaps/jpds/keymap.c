@@ -33,11 +33,11 @@ tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT(
-        TD(TD_ESC_EQL), KC_1, KC_2, KC_3,   KC_4,    KC_5,                         TD(TD_SIX_MOUSE), KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        CW_TOGG, KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                         KC_Z,    KC_F,    KC_O,    KC_U,    KC_QUOT, KC_BSLS,
-        OSM(MOD_LSFT), KC_C, KC_R, KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_A, RSFT_T(KC_SCLN),
-        KC_LGUI, ALT_T(KC_Q), KC_J, KC_V,   KC_D,    KC_K,                         KC_X,    KC_H,    KC_SLSH, KC_COMMA, KC_DOT, KC_HYPR,
-                                LT(SYM,KC_ENT), CTL_T(KC_TAB),           SFT_T(KC_BSPC), LT(NAV,KC_SPC)
+        TD(TD_ESC_EQL), KC_1, KC_2, KC_3,   KC_4,    KC_5,                                                    TD(TD_SIX_MOUSE), KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+        CW_TOGG, KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                                                    KC_Z,    KC_F,    KC_O,    KC_U,    KC_QUOT, KC_BSLS,
+        OSM(MOD_LSFT), MT(MOD_LGUI, KC_C), MT(MOD_LALT, KC_R), MT(MOD_LSFT, KC_S), MT(MOD_LCTL, KC_T), KC_G,  KC_M,    MT(MOD_RCTL, KC_N),    MT(MOD_RSFT, KC_E),    MT(MOD_RALT, KC_I), MT(MOD_RGUI, KC_A), RSFT_T(KC_SCLN),
+        KC_LGUI, ALT_T(KC_Q), KC_J, KC_V,   KC_D,    KC_K,                                                    KC_X,    KC_H,    KC_SLSH, KC_COMMA, KC_DOT, KC_HYPR,
+                                LT(SYM,KC_ENT), CTL_T(KC_TAB),                                             SFT_T(KC_BSPC), LT(NAV,KC_SPC)
     ),
     [SYM] = LAYOUT(
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
