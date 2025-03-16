@@ -41,9 +41,9 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT(
         TD(TD_ESC_EQL), KC_1, KC_2, KC_3,   KC_4,    KC_5,                                                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        CW_TOGG, KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                                                    KC_Z,    KC_F,    KC_O,    KC_U,    KC_QUOT, KC_BSLS,
-        OSM(MOD_LSFT), MT(MOD_LGUI, KC_C), MT(MOD_LALT, KC_R), MT(MOD_LSFT, KC_S), MT(MOD_LCTL, KC_T), KC_G,  KC_M,    MT(MOD_RCTL, KC_N),    MT(MOD_RSFT, KC_E),    MT(MOD_RALT, KC_I), MT(MOD_RGUI, KC_A), RSFT_T(KC_SCLN),
-        KC_LGUI, ALT_T(KC_Q), KC_J, KC_V,   KC_D,    KC_K,                                                    KC_X,    KC_H,    KC_SLSH, KC_COMMA, KC_DOT, KC_HYPR,
+        CW_TOGG, KC_V,    KC_L,    KC_H,    KC_G,    KC_K,                                                    KC_Q,    KC_F,    KC_O,    KC_U,    KC_J,    KC_BSLS,
+        OSM(MOD_LSFT), MT(MOD_LGUI, KC_S), MT(MOD_LALT, KC_R), MT(MOD_LSFT, KC_N), MT(MOD_LCTL, KC_T), KC_B,  KC_Y,    MT(MOD_RCTL, KC_C),    MT(MOD_RSFT, KC_A),    MT(MOD_RALT, KC_E), MT(MOD_RGUI, KC_I), RSFT_T(KC_SLSH),
+        KC_LGUI, ALT_T(KC_Z), KC_X, KC_M,   KC_D,    KC_P,                                                    KC_QUOT,    KC_W,    KC_DOT, KC_SCLN, KC_COMMA, KC_HYPR,
                                 LT(SYM,KC_ENT), CTL_T(KC_TAB),                                             SFT_T(KC_BSPC), LT(NAV,KC_SPC)
     ),
     [SYM] = LAYOUT(
