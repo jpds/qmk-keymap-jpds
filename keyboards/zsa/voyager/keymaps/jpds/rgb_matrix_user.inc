@@ -1,1 +1,1 @@
-#include "features/palettefx.inc"
+#include "palettefx.inc"
