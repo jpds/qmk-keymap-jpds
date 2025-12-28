@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NAV] = LAYOUT(
         RM_TOGG, QK_KB,   RM_NEXT, RGB_M_P, RM_VALD, RM_VALU,                      KC_BRID, KC_BRIU, _______, _______, _______, QK_BOOT,
         RM_HUEU, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______,                      KC_PGUP, KC_HOME, KC_DEL,  KC_END,  _______, KC_SLEP,
-        _______, KC_MPRV, KC_MNXT, KC_MSTP, KC_MPLY, _______,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
+        LUMINO,  KC_MPRV, KC_MNXT, KC_MSTP, KC_MPLY, _______,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
         _______, _______, _______, _______, _______, _______,                      _______, C(S(KC_TAB)), C(KC_TAB), KC_PSCR, _______, TO(MOUSE),
                                                      _______, _______,    _______, _______
     ),
