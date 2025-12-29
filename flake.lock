@@ -1,0 +1,82 @@
+{
+  "nodes": {
+    "getreuer_modules": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765141038,
+        "narHash": "sha256-T09KqSb5/DGQKl66jC2XFXfPwMmzXDfZ6yUSG4kK/d8=",
+        "owner": "getreuer",
+        "repo": "qmk-modules",
+        "rev": "d2b5ee0d6597e71fa53f772ade2aef436014b1e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "getreuer",
+        "repo": "qmk-modules",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1766902085,
+        "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c0b0e0fddf73fd517c3471e546c0df87a42d53f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "qmk_firmware": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766111009,
+        "narHash": "sha256-mF5FLW2Z7i8FS9+6zlrincruofqPwdL1AIK+hToTino=",
+        "ref": "refs/tags/0.31.3",
+        "rev": "54e8fad959d6a6e53e08c62ac3a3c4d4bdc6c957",
+        "revCount": 29238,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/qmk/qmk_firmware"
+      },
+      "original": {
+        "ref": "refs/tags/0.31.3",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/qmk/qmk_firmware"
+      }
+    },
+    "qmkfmt": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742470119,
+        "narHash": "sha256-QWyMH93a07/0CJ5CENiwVB4C4w1agowW+esW9Wx5vJk=",
+        "owner": "rcorre",
+        "repo": "qmkfmt",
+        "rev": "caf37d554841fb550cf38368850b3bc4a9836290",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rcorre",
+        "ref": "v0.2.0",
+        "repo": "qmkfmt",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "getreuer_modules": "getreuer_modules",
+        "nixpkgs": "nixpkgs",
+        "qmk_firmware": "qmk_firmware",
+        "qmkfmt": "qmkfmt"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
