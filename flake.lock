@@ -54,16 +54,16 @@
     "qmkfmt": {
       "flake": false,
       "locked": {
-        "lastModified": 1742470119,
-        "narHash": "sha256-QWyMH93a07/0CJ5CENiwVB4C4w1agowW+esW9Wx5vJk=",
+        "lastModified": 1767046019,
+        "narHash": "sha256-X2vXQqBUO+4H+sF+Tak6ksTE9Jv3o56fPImJhdH5x40=",
         "owner": "rcorre",
         "repo": "qmkfmt",
-        "rev": "caf37d554841fb550cf38368850b3bc4a9836290",
+        "rev": "d856c624672a999c7dbbc198bed4793f597d6949",
         "type": "github"
       },
       "original": {
         "owner": "rcorre",
-        "ref": "v0.2.0",
+        "ref": "v0.3.0",
         "repo": "qmkfmt",
         "type": "github"
       }
