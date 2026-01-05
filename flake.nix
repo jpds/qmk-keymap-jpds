@@ -7,7 +7,7 @@
     qmk_firmware = {
       type = "git";
       url = "https://github.com/qmk/qmk_firmware";
-      ref = "refs/tags/0.31.3";
+      ref = "refs/tags/0.31.6";
       submodules = true;
       flake = false;
     };
