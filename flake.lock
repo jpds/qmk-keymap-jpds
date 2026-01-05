@@ -18,11 +18,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1766902085,
-        "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
+        "lastModified": 1767379071,
+        "narHash": "sha256-EgE0pxsrW9jp9YFMkHL9JMXxcqi/OoumPJYwf+Okucw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c0b0e0fddf73fd517c3471e546c0df87a42d53f4",
+        "rev": "fb7944c166a3b630f177938e478f0378e64ce108",
         "type": "github"
       },
       "original": {
@@ -35,17 +35,17 @@
     "qmk_firmware": {
       "flake": false,
       "locked": {
-        "lastModified": 1766111009,
-        "narHash": "sha256-mF5FLW2Z7i8FS9+6zlrincruofqPwdL1AIK+hToTino=",
-        "ref": "refs/tags/0.31.3",
-        "rev": "54e8fad959d6a6e53e08c62ac3a3c4d4bdc6c957",
-        "revCount": 29238,
+        "lastModified": 1767469529,
+        "narHash": "sha256-bhdKPMU/DdAPnASSp1yNJxf6D6MSXNcJXp5AykBSXlk=",
+        "ref": "refs/tags/0.31.6",
+        "rev": "91a9f9e49263dbb04a0c54a2664d5115623009aa",
+        "revCount": 29248,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/qmk/qmk_firmware"
       },
       "original": {
-        "ref": "refs/tags/0.31.3",
+        "ref": "refs/tags/0.31.6",
         "submodules": true,
         "type": "git",
         "url": "https://github.com/qmk/qmk_firmware"
