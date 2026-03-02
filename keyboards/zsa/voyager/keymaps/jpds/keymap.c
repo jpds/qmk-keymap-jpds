@@ -82,7 +82,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     [MOUSE] = {{HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_AZURE}, {HSV_GREEN}, {HSV_GREEN}, {HSV_AZURE}, {HSV_OFF}, {HSV_WHITE}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}},
 };
 
-void set_layer_color(int layer) {
+void set_layer_color(uint8_t layer) {
     for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
         HSV hsv = {
             .h = pgm_read_byte(&ledmap[layer][i][0]),
@@ -90,7 +90,7 @@ void set_layer_color(int layer) {
             .v = pgm_read_byte(&ledmap[layer][i][2]),
         };
         if (!hsv.h && !hsv.s && !hsv.v) {
-            rgb_matrix_set_color(i, HSV_OFF);
+            rgb_matrix_set_color(i, 0, 0, 0);
         } else {
             RGB   rgb = hsv_to_rgb(hsv);
             float f   = (float)rgb_matrix_config.hsv.v / UINT8_MAX;
@@ -103,26 +103,24 @@ bool rgb_matrix_indicators_user(void) {
     if (keyboard_config.disable_layer_led) {
         return false;
     }
-    switch (biton32(layer_state)) {
-        // case 0:
-        //   set_layer_color(0);
-        //   break;
-        case 1:
-            set_layer_color(1);
-            break;
-        case 2:
-            set_layer_color(2);
-            break;
-        case 3:
-            set_layer_color(3);
-            break;
-        case 4:
-            set_layer_color(4);
-            break;
+    switch (get_highest_layer(layer_state)) {
+        case BASE:
+            // Let the RGB matrix effect render unimpeded.
+            return true;
+        case SYM:
+            set_layer_color(SYM);
+            return true;
+        case NAV:
+            set_layer_color(NAV);
+            return true;
+        case STENO:
+            set_layer_color(STENO);
+            return true;
+        case MOUSE:
+            set_layer_color(MOUSE);
+            return true;
         default:
-            if (rgb_matrix_get_flags() == LED_FLAG_NONE) rgb_matrix_set_color_all(HSV_OFF);
-            break;
+            return true;
     }
-    return true;
 }
 
