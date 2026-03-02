@@ -90,9 +90,9 @@ void set_layer_color(uint8_t layer) {
         if (!hsv.h && !hsv.s && !hsv.v) {
             rgb_matrix_set_color(i, 0, 0, 0);
         } else {
-            RGB   rgb = hsv_to_rgb(hsv);
-            float f   = (float)rgb_matrix_config.hsv.v / UINT8_MAX;
-            rgb_matrix_set_color(i, f * rgb.r, f * rgb.g, f * rgb.b);
+            RGB     rgb = hsv_to_rgb(hsv);
+            uint8_t v   = rgb_matrix_config.hsv.v;
+            rgb_matrix_set_color(i, (uint16_t)rgb.r * v / 255, (uint16_t)rgb.g * v / 255, (uint16_t)rgb.b * v / 255);
         }
     }
 }
