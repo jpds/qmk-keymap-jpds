@@ -74,10 +74,37 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [SYM]   = {{HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_ORANGE}, {HSV_RED}, {HSV_GREEN}, {HSV_OFF}, {HSV_WHITE}, {HSV_CYAN}, {HSV_ORANGE}, {HSV_RED}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_ORANGE}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_ORANGE}, {HSV_OFF}, {HSV_ORANGE}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_ORANGE}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}},
-    [NAV]   = {{HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_RED}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_RED}, {HSV_OFF}, {HSV_ORANGE}, {HSV_RED}, {HSV_ORANGE}, {HSV_OFF}, {HSV_YELLOW}, {HSV_OFF}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}},
-    [STENO] = {{HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_WHITE}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_CYAN}, {HSV_CYAN}},
-    [MOUSE] = {{HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_AZURE}, {HSV_GREEN}, {HSV_GREEN}, {HSV_AZURE}, {HSV_OFF}, {HSV_WHITE}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}},
+    [SYM] = {
+        {HSV_OFF},    {HSV_OFF},  {HSV_OFF},    {HSV_OFF},   {HSV_OFF},   {HSV_OFF},   {HSV_MAGENTA}, {HSV_OFF},  {HSV_OFF},    {HSV_OFF},   {HSV_OFF},   {HSV_OFF},
+        {HSV_OFF},    {HSV_CYAN}, {HSV_ORANGE}, {HSV_RED},   {HSV_GREEN}, {HSV_OFF},   {HSV_WHITE},   {HSV_CYAN}, {HSV_ORANGE}, {HSV_RED},   {HSV_GREEN}, {HSV_OFF},
+        {HSV_OFF},    {HSV_OFF},  {HSV_OFF},    {HSV_OFF},   {HSV_OFF},   {HSV_OFF},   {HSV_OFF},     {HSV_OFF},  {HSV_ORANGE}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN},
+        {HSV_ORANGE}, {HSV_OFF},  {HSV_ORANGE}, {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN}, {HSV_ORANGE},  {HSV_OFF},  {HSV_OFF},    {HSV_GREEN}, {HSV_GREEN}, {HSV_GREEN},
+                                                             {HSV_OFF},   {HSV_OFF},   {HSV_OFF},     {HSV_GREEN}
+    },
+
+    [NAV] = {
+        {HSV_OFF}, {HSV_OFF},    {HSV_OFF},   {HSV_OFF},         {HSV_OFF},         {HSV_OFF},         {HSV_OFF},         {HSV_OFF}, {HSV_GREEN}, {HSV_GREEN},  {HSV_RED}, {HSV_OFF},
+        {HSV_OFF}, {HSV_OFF},    {HSV_OFF},   {HSV_OFF},         {HSV_OFF},         {HSV_OFF},         {HSV_OFF},         {HSV_OFF}, {HSV_OFF},   {HSV_OFF},    {HSV_OFF}, {HSV_OFF},
+        {HSV_OFF}, {HSV_OFF},    {HSV_GREEN}, {HSV_GREEN},       {HSV_OFF},         {HSV_OFF},         {HSV_OFF},         {HSV_RED}, {HSV_OFF},   {HSV_ORANGE}, {HSV_RED}, {HSV_ORANGE},
+        {HSV_OFF}, {HSV_YELLOW}, {HSV_OFF},   {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_SPRINGGREEN}, {HSV_OFF}, {HSV_OFF},   {HSV_OFF},    {HSV_OFF}, {HSV_OFF},
+                                                                 {HSV_OFF},         {HSV_MAGENTA},     {HSV_OFF},         {HSV_OFF}
+    },
+
+    [STENO] = {
+        {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},   {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN},
+        {HSV_OFF},  {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_WHITE}, {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},
+        {HSV_CYAN}, {HSV_CYAN}, {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},   {HSV_OFF},  {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN},
+        {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN}, {HSV_CYAN},  {HSV_CYAN}, {HSV_OFF},  {HSV_OFF},  {HSV_OFF},  {HSV_OFF},
+                                                        {HSV_OFF},  {HSV_OFF},  {HSV_CYAN},  {HSV_CYAN}
+    },
+
+    [MOUSE] = {
+        {HSV_OFF}, {HSV_OFF},   {HSV_OFF},   {HSV_OFF},     {HSV_OFF},     {HSV_OFF},     {HSV_OFF},     {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF},
+        {HSV_OFF}, {HSV_AZURE}, {HSV_GREEN}, {HSV_GREEN},   {HSV_AZURE},   {HSV_OFF},     {HSV_WHITE},   {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF},
+        {HSV_OFF}, {HSV_OFF},   {HSV_OFF},   {HSV_OFF},     {HSV_OFF},     {HSV_OFF},     {HSV_OFF},     {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF},
+        {HSV_OFF}, {HSV_OFF},   {HSV_OFF},   {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_MAGENTA}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF}, {HSV_OFF},
+                                                            {HSV_OFF},     {HSV_OFF},     {HSV_OFF},     {HSV_OFF}
+    }
 };
 
 void set_layer_color(uint8_t layer) {
